@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android'
+apply plugin: 'testobject'
+
+
+testobject {
+    username "$System.env.USERNAME" // the username you use for login into testobject, not your email
+    password "$System.env.PASSWORD" // your password you use for login into testobject
+    //team "foobar" //the name of the team the user belongs to, see nr. 1 in screenshot above,  (optional, if the user is not part of a team)
+    app "$System.env.APP" // name of your app, see nr. 2 in screenshot above
+    testSuite Integer.parseInt("$System.env.TEST_SUITE") // id of your test suite, see nr. 3 in screenshot above
+    runAsPackage false
+}
+
+
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.example.android.testing.espresso.BasicSample"
+        minSdkVersion 10
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+    productFlavors {
+    }
+}
+
+
+
+
+
+
+
+
+dependencies {
+    // App dependencies
+    compile 'com.google.guava:guava:18.0'
+    compile 'com.android.support.test:runner:0.4.1'
+
+    // Testing-only dependencies
+    // Force usage of support annotations in the test app, since it is internally used by the runner module.
+    androidTestCompile 'com.android.support.test:rules:0.4'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.5.4'
+}

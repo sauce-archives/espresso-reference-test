@@ -1,0 +1,23 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url 'http://nexus.testobject.org/nexus/content/repositories/testobject-public-repo' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.0.0'
+        classpath group: 'org.testobject', name: 'testobject-gradle-plugin', version: '0.0.41'
+    }
+}
+
+
+
+
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
