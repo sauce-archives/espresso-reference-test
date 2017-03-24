@@ -6,7 +6,9 @@ Example setup for using TestObject Gradle Plugin with Espresso
     TESTOBJECT_PASSWORD=<password>
     TESTOBJECT_APP="basic-espresso-sample"
     TESTOBJECT_TEST_SUITE=11
-    ./gradlew testobjectUpload`
+
+    To Execute:
+    $ ./gradlew testobjectUpload
 
 Prerequisites:
 
