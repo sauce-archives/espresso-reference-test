@@ -20,7 +20,7 @@ Prerequisites:
 
 IMPORTANT:  
 
-"username" is what you use for login into testobject, not your email. If you are a member of a team, the root account username is needed to access the storage API. 
+"username" is what you use for login into testobject, not your email. If you are a member of a team, the "team" field must be present in order to access the storage API. 
 
 "password" must be associated with the correct username
 
