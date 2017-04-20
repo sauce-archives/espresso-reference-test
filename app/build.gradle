@@ -1,18 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android'
-apply plugin: 'testobject'
-
-
-testobject {
-    username "$System.env.USERNAME" // the username you use for login into testobject, not your email
-    password "$System.env.PASSWORD" // your password you use for login into testobject
-    //team "foobar" //the name of the team the user belongs to, see nr. 1 in screenshot above,  (optional, if the user is not part of a team)
-    app "$System.env.APP" // name of your app, see nr. 2 in screenshot above
-    testSuite Integer.parseInt("$System.env.TEST_SUITE") // id of your test suite, see nr. 3 in screenshot above
-    runAsPackage false
-}
-
-
 
 android {
     compileSdkVersion 21
@@ -36,13 +23,6 @@ android {
     productFlavors {
     }
 }
-
-
-
-
-
-
-
 
 dependencies {
     // App dependencies
